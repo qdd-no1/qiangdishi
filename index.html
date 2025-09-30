@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影天堂 - 最新热门电影</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .active-page {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- 主导航 -->
+    <nav class="bg-blue-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <button id="backBtn" class="p-2 rounded-full hover:bg-blue-700 transition">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h1 class="text-2xl font-bold">电影天堂</h1>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-blue-200 transition">首页</a>
+                <a href="#" class="hover:text-blue-200 transition">电影</a>
+                <a href="#" class="hover:text-blue-200 transition">电视剧</a>
+                <a href="#" class="hover:text-blue-200 transition">动漫</a>
+                <a href="#" class="hover:text-blue-200 transition">综艺</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full hover:bg-blue-700 transition">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-blue-700 transition">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-800">热门电影</h2>
+            <div class="flex space-x-2">
+                <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">最新</button>
+                <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">评分</button>
+                <button class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">热门</button>
+            </div>
+        </div>
+
+        <!-- 电影列表 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- 电影卡片1 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(1)">
+                <img src="https://picsum.photos/300/450?random=1" alt="科幻电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">星际穿越</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">9.3</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">科幻 / 冒险 / 2014</p>
+                </div>
+            </div>
+
+            <!-- 电影卡片2 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(2)">
+                <img src="https://picsum.photos/300/450?random=2" alt="犯罪电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">教父</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">9.2</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">犯罪 / 剧情 / 1972</p>
+                </div>
+            </div>
+
+            <!-- 电影卡片3 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(3)">
+                <img src="https://picsum.photos/300/450?random=3" alt="动作电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">黑暗骑士</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">9.0</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">动作 / 犯罪 / 2008</p>
+                </div>
+            </div>
+
+            <!-- 电影卡片4 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(4)">
+                <img src="https://picsum.photos/300/450?random=4" alt="剧情电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">肖申克的救赎</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">9.7</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">剧情 / 犯罪 / 1994</p>
+                </div>
+            </div>
+
+            <!-- 电影卡片5 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(5)">
+                <img src="https://picsum.photos/300/450?random=5" alt="动画电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">千与千寻</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">9.3</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">动画 / 奇幻 / 2001</p>
+                </div>
+            </div>
+
+            <!-- 电影卡片6 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(6)">
+                <img src="https://picsum.photos/300/450?random=6" alt="科幻电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">盗梦空间</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">9.0</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">科幻 / 悬疑 / 2010</p>
+                </div>
+            </div>
+
+            <!-- 电影卡片7 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(7)">
+                <img src="https://picsum.photos/300/450?random=7" alt="剧情电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">阿甘正传</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">9.5</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">剧情 / 爱情 / 1994</p>
+                </div>
+            </div>
+
+            <!-- 电影卡片8 -->
+            <div class="movie-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 cursor-pointer" onclick="showMovieDetail(8)">
+                <img src="https://picsum.photos/300/450?random=8" alt="科幻电影海报" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-1">黑客帝国</h3>
+                    <div class="flex items-center text-yellow-400 mb-2">
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1 text-gray-700">8.7</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">科幻 / 动作 / 1999</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分页控件 -->
+        <div class="flex justify-center mt-10">
+            <nav class="inline-flex rounded-md shadow">
+                <button id="prevPage" class="px-3 py-1 rounded-l-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                    <i class="fas fa-chevron-left"></i> 上一页
+                </button>
+                <div class="flex">
+                    <button class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50 active-page">1</button>
+                    <button class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">2</button>
+                    <button class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">3</button>
+                    <span class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-700">...</span>
+                    <button class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">10</button>
+                </div>
+                <button id="nextPage" class="px-3 py-1 rounded-r-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                    下一页 <i class="fas fa-chevron-right"></i>
+                </button>
+            </nav>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">电影天堂</h3>
+                    <p class="text-gray-400">提供最新最全的高清电影资源</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">关于我们</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">公司简介</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">联系方式</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">加入我们</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">帮助中心</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">常见问题</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">使用教程</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">反馈建议</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">法律条款</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">服务协议</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">隐私政策</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">版权声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2025 电影天堂 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 电影详情模态框 -->
+    <div id="movieDetailModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="relative">
+                <button id="closeModal" class="absolute top-4 right-4 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3">
+                        <img id="detailPoster" src="" alt="电影海报" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="p-6 md:w-2/3">
+                        <h2 id="detailTitle" class="text-3xl font-bold mb-2"></h2>
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center text-yellow-400 mr-4">
+                                <i class="fas fa-star"></i>
+                                <span id="detailRating" class="ml-1 text-gray-800"></span>
+                            </div>
+                            <span id="detailYear" class="text-gray-600 mr-4"></span>
+                            <span id="detailDuration" class="text-gray-600"></span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <!-- 类型标签将通过JS动态生成 -->
+                        </div>
+                        <p id="detailDescription" class="text-gray-700 mb-6"></p>
+                        <div class="mb-6">
+                            <h3 class="font-semibold text-lg mb-2">演职人员</h3>
+                            <p id="detailCast" class="text-gray-600"></p>
+                        </div>
+                        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+                            <i class="fas fa-play mr-2"></i>立即观看
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 电影数据
+        const movies = [
+            {
+                id: 1,
+                title: "星际穿越",
+                rating: 9.3,
+                year: "2014",
+                duration: "169分钟",
+                genres: ["科幻", "冒险", "剧情"],
+                description: "在不远的未来，随着地球自然环境的恶化，人类面临着无法生存的威胁。这时科学家们在太阳系中的土星附近发现了一个虫洞，通过它可以打破人类的能力限制，到更遥远外太空寻找延续生命希望的机会。一个探险小组通过这个虫洞穿越到太阳系之外，他们的目标是找到一颗适合人类移民的星球。在这艘飞船上，探险队员面临着前所未有、人类思想前所未及的巨大挑战。然而，通过虫洞的时候，他们发现飞船上的一个小时相当于地球上的七年时间，即使探险小组的任务能够完成，他们的救赎对于对地球上仍然活着的人来说已经是太晚。飞行员库珀必须在与自己的儿女重逢以及拯救人类的未来之间做出抉择。",
+                cast: "马修·麦康纳 / 安妮·海瑟薇 / 杰西卡·查斯坦",
+                image: "https://picsum.photos/300/450?random=1"
+            },
+            {
+                id: 2,
+                title: "教父",
+                rating: 9.2,
+                year: "1972",
+                duration: "175分钟",
+                genres: ["犯罪", "剧情"],
+                description: "1945年夏天，美国本部黑手党科莱昂家族首领，教父维托·科莱昂为小女儿康妮举行了盛大的婚礼。维托·科莱昂有三个儿子：暴躁好色的长子桑尼，懦弱的次子弗雷德和刚从二战战场回来的小儿子迈克。其中桑尼是教父的得力助手；而迈克虽然精明能干，却对家族的事业没什么兴趣。教父是黑手党首领，常干违法的勾当。但同时他也是许多弱小平民的保护神，深得人们爱戴。他还有一个准则就是决不贩毒害人。为此他拒绝了毒枭
